@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none; border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: rgb(247, 245, 245);
+}
+.cover-div{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    z-index: 19;
+    display: block;
+    background: rgba(168, 147, 147,0.5);
+}
+header{
+    margin-bottom: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.top-bar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: white;
+}
+.top-bar .nav-bar{
+    margin-right: 780px;
+    margin-left: 55px;
+}
+.top-bar .nav-bar li{
+    display: inline-block;
+    padding: 17px;
+}
+.top-bar .account{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-bar .account li{
+    padding-left: 14px;
+}
+.account li img{
+    cursor: pointer;
+}
+.container form{
+    display: flex;
+    margin-top: 16vh;
+}
+.image-container{
+    background: white;
+    height: 600px;
+    width: 600px;
+    margin-left: 8%;
+    /* margin-top: 16vh; */
+    box-shadow: 0 0 4px rgb(189, 186, 186);
+    border-radius: 5px;
+}
+.image-container .image-show{
+    position: relative;
+    background: #fafbff;
+    border: 1px dashed darkcyan;
+    height: 90%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+}
+.container .image-infor .myImage{
+    display: none;
+}
+.image-container .image-show img{
+    position: absolute;
+}
+.image-infor{
+    background: white;
+    height: 600px;
+    width: 600px;
+    box-shadow: 0 0 4px rgb(189, 186, 186);
+    border-radius: 5px;
+    margin-left: 2%;
+}
+
+
+
+
+
+
+
+/*login sign up */
+.sign-up-form .input-box input{
+    padding: 7px;
+}
+.sign-up-form label{
+    margin-top: 30px;
+}
+.sign-up-form label a{
+    color: yellowgreen;
+}
+.sign-up-form label a:hover{
+    text-decoration: underline;
+}
+.form-box{
+    background: white;
+    box-shadow: 0 0 4px black;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: -800px;
+    left: 600px;
+    z-index: 20;
+    transition: ease 0.8s;
+
+    border-radius: 15px;
+}
+.form-box h2{
+    margin-top: 20px;
+    color: rgb(127, 168, 45);
+}
+.form-box .close{
+    font-size: 25px;
+    margin-left: 340px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.login-form form{
+    margin-top: 10px;
+}
+.form-box .input-box{
+    margin-top: 30px;   
+    border-bottom: 2px solid rgb(199, 187, 187);
+    width: 270px;
+}
+.login-form .forgot-password{
+    margin-left: 155px;
+    font-size: 15px;
+    color: yellowgreen;
+}
+.login-form .forgot-password:hover{
+    text-decoration: underline;
+}
+.form-box button{
+    margin-top: 30px;
+    height: 40px;
+    width: 150px;
+    background: yellowgreen;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+}
+.form-box .not-have-account{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.form-box .not-have-account a{
+    color: yellowgreen;
+}
+.form-box .not-have-account a:hover{
+    text-decoration: underline;
+}
+.form-box .input-box input{
+    padding: 10px;
+}
+.remember-me{
+    position: absolute;
+    top: 228px;
+    left: 56px;
+    font-size: 15px;
+    margin-top: 3px;
+}
+.scroll-up{
+    position: fixed;
+    left: 100%;
+    top: 89%;
+    width: 55px;
+    background: blue;
+    text-align: center;
+    border-radius: 7px 0 0 0;
+    background: rgb(83, 79, 79);
+    transition: ease 0.4s;
+  }
+  .scroll-up i{
+    font-size: 35px;
+    color: white;
+}
