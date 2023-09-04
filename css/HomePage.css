@@ -6,9 +6,15 @@
     padding: 0;
     margin: 0;
 }
+body{
+    padding-top: 100px;
+}
 header{
+    top: 0px;
+    position: fixed;
     display: flex;
-
+    background: white;
+    border-bottom: 1px solid black;
 }
 header .logo{
     height: 9vh;
@@ -41,4 +47,16 @@ header ul li{
     background-color: rgb(240, 235, 235);
     color: black;
     margin-left: 10px;
+}
+main{
+    height: 80vh;
+    border: 1px solid black;
+}
+main div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

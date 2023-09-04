@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/HomePage.css">
     <title>HomePage</title>
-    <link rel="stylesheet" href="css/css/bootstrap.css">
 </head>
 <body>
     <header>
@@ -13,13 +12,18 @@
         <ul>
             <li>Giới thiệu</li>
             <li>Liên lạc</li>
-            <a class="dndk loginBtn" href="#"><li >Đăng nhập</li></a>
-            <a class="dndk registerBtn" href="#"><li>Đăng kí</li></a>
+            <a class="dndk loginBtn" href="Login.php"><li >Đăng nhập</li></a>
+            <a class="dndk registerBtn" href="Register.php"><li>Đăng kí</li></a>
         </ul>
     </header>
+    <main>
+        <div>
+            <p>Chào mừng đến với</p>
+            <h1>Seee</h1>
+            <h2>Không gian tâm hồn & xúc cảm</h2>
+            <a href="Login.php"><button>Khám phá</button></a>
+        </div>
+    </main>
 
-    <h1>Hello bootstrap</h1>
-
-    <script src="js/bootstrap.bundle.js"></script>
 </body>
 </html>
