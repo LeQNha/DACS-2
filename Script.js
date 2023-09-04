@@ -59,13 +59,15 @@ window.addEventListener("scroll", function () {
 });
 
 
-
 //open submenu by clicking on avatar
 function ShowSubmenu() {
   var submenu = document.getElementById("submenu");
+  var avatar = document.querySelector(".avatar");
   if (submenu.style.display === "none") {
+    avatar.style.borderColor = "lightgrey";
     submenu.style.display = "block";
   } else {
+    avatar.style.borderColor = "transparent";
     submenu.style.display = "none";
   }
 }
@@ -73,57 +75,96 @@ function ShowSubmenu() {
 
 // AJAX DĂNG NHẬP ĐĂNG KÝ
 
-function submitData() {
-  console.log("an");
-  $.ajax({
-    type: "POST",
-    url: "Login.php",
-    data: $("#loginForm").serialize(),
-    success: function(response) {
-      if(response === "success") {
-        alert("Đăng nhập thành công!");
-        window.location.href = "Home.php"; // Điều hướng tới trang chính hoặc trang khác
+// function submitData() {
+//   $.ajax({
+//     type: "POST",
+//     url: "Login.php",
+//     data: $("#loginForm").serialize(),
+//     success: function(response) {
+//       if(response === "success") {
+//         alert("Đăng nhập thành công!");
+//         window.location.href = "Home.php"; // Điều hướng tới trang chính hoặc trang khác
 
-      }else {
-        alert("Tên đăng nhập hoặc mật khẩu không đúng!");
-        // window.location.href = "Home.php"; // Điều hướng tới trang chính hoặc trang khác
+//       }else {
+//         alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+//         window.location.href = "Home.php"; // Điều hướng tới trang chính hoặc trang khác
        
+//       }
+//     }
+//   });
+// }
+
+// AJAX DANG NHAP
+function submitLoginData(){
+  var xhr = new XMLHttpRequest();
+  var formData = new FormData(document.getElementById("loginForm"));
+
+  xhr.open('POST', 'Login.php');
+
+  event.preventDefault();
+
+  xhr.onload = function(){
+    var receivedData = JSON.parse(xhr.responseText);
+    if(xhr.status == 200){
+      if(receivedData.status == 'success'){
+        window.location.href = "Home.php";
+      }else{
+        alert('Sai tài khoản hoặc mật khẩu!');
       }
     }
-  });
+  };
+  xhr.send(formData);
+};
+// AJAX DANG KY
+function submitRegisterData(){
+  var xhr = new XMLHttpRequest();
+  var formData = new FormData(document.getElementById("registerForm"));
+
+  xhr.open('POST','Register.php');
+
+  event.preventDefault();
+
+  xhr.onload= function(){
+    // var receivedData = JSON.parse(xhr.responseText);
+    if(xhr.responseText == "duplicate"){
+      alert('Tài khoản đã tồn tại');
+    }else if(xhr.responseText == "success"){
+      alert('Đăng ký thành công');
+      window.location.href = "Home.php";
+    }else if(xhr.responseText == "password not match"){
+      alert('Mật khẩu không trùng khớp');
+    }else{
+      alert('Không được để trống');
+    }
+  };
+  xhr.send(formData);
 }
 
-// $(document).ready(function() {
-//   $('#loginForm').submit(function(event) {
-//     event.preventDefault(); // Ngăn chặn form gửi đi
 
-//     // Lấy dữ liệu từ các trường input
-//     var username = $('#username').val();
-//     var password = $('#password').val();
+//Show img details
 
-//     $.ajax({
-//       url: 'Login.php',
-//       type: 'post',
-//       data: {
-//         username: username,
-//         password: password,
-//         submit: true
-//       },
-//       dataType: 'json', // Đặt dataType thành 'json' để xử lý phản hồi từ server
-//       success: function(response) {
-//         if (response.status === 'success') {
-//           alert('Đăng nhập thành công');
-//           window.location.href = 'Home.php'; // Chuyển hướng đến trang Home.php
-//         } else {
-//           alert('Tên đăng nhập hoặc mật khẩu không chính xác');
-//         }
-//       },
-//       error: function(xhr, textStatus, errorThrown) {
-//         console.log(xhr.responseText);
-//         console.log(textStatus);
-//         console.log(errorThrown);
-//         alert('Có lỗi xảy ra trong quá trình gửi yêu cầu');
-//       }
-//     });
-//   });
-// });
+function ShowDetails(pid){
+  var imgDetailsContainer = document.querySelector('.show-details');
+  var detailTile = document.querySelector('.detail-title');
+  var detailImg = document.querySelector('.detail-img');
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'ShowProductDetails.php');
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = function() {
+    var receivedData = JSON.parse(xhr.responseText);
+    imgDetailsContainer.style.display = "block";
+    // imgDetailsContainer.innerHTML = receivedData.title;
+    detailTile.textContent = receivedData.title;
+    detailImg.src = "./img/"+receivedData.path;
+    
+  };
+
+  xhr.send("pid=" + encodeURIComponent(pid));
+}
+//close show details
+var closeShowDetailsButton = document.querySelector('.close-show-details');
+  closeShowDetailsButton.addEventListener('click',function(){
+  var imgDetailsContainer = document.querySelector('.show-details');
+  imgDetailsContainer.style.display = "none";
+});

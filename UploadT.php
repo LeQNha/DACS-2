@@ -43,7 +43,7 @@
     </header>
     
     <div class="container">
-        <form action="./phpprocess/UploadImageT.php" method="post" enctype="multipart/form-data">
+        <form action="UploadImageT.php" method="post" enctype="multipart/form-data">
             <div class="image-container">
                 <div class="image-show">
                     <p>Nhấp vào để tải lên</p>
@@ -73,7 +73,7 @@
     <div class="form-box login-form" id="login-form">
             <i class="fa-solid fa-xmark close" id="close-login"></i>
             <h2>ĐĂNG NHẬP</h2>
-            <form action="./phpprocess/Login.php" method="post">
+            <form action="Login.php" method="post">
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
                     <input type="text" name="username" placeholder="Tài khoản" required>                
@@ -93,7 +93,7 @@
         <div class="form-box sign-up-form" id="sign-up-form">
             <i class="fa-solid fa-xmark close" id="close-sign-up"></i>
             <h2>ĐĂNG KÝ</h2>
-            <form action="./phpprocess/Register.php" method="post">
+            <form action="Register.php" method="post">
                 <div class="input-box">
                     <p>Email</p>
                     <input type="email" name="email" required>
@@ -121,7 +121,7 @@
             <i class="fa-sharp fa-solid fa-angle-up"></i>
         </a>
 
-    <script src="./Script.js"></script>
+    <script src="Script.js"></script>
     <script src="./UploadT.js"></script>
 </body>
 </html>

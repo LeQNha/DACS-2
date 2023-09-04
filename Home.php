@@ -1,7 +1,9 @@
 <?php
     session_start();
     include ('dbc.php');
-    $username = $_SESSION['Login']['username'];
+    if(isset($_SESSION['Login']['username'])){
+        $username = $_SESSION['Login']['username'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="css/Home.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="cover-div" id="cover-div"></div>
     <header>
         <div class="top-bar">
             <ul class="nav-bar">
-                <li><h2 style="cursor: pointer;">Draint</h2></li>
+                <li><h2 style="cursor: pointer;">See</h2></li>
                 <li>About</li>
                 <li>Rank</li>
                 <li>Challenge</li>
@@ -30,8 +31,7 @@
                 ?>
                     <li><i class="fa-solid fa-bell"></i></li>
                     <li style="font-size: 22px;"> <?php echo $_SESSION['Login']['username']; ?> </li>
-                    <li><img src="/webimg/defaultAvatar.png" alt="aa" onclick="ShowSubmenu()"></li>
-                    <li><a href="Logout.php">Logout</a></li>
+                    <li><img src="/webimg/defaultAvatar.png" alt="aa" class="avatar" onclick="ShowSubmenu()"></li>
                 <?php 
                     }else{ 
                 ?>
@@ -77,17 +77,19 @@
             $rows = mysqli_query($conn, $query);
             
             foreach($rows as $row){ ?>
-                <div class="paint" onclick="ShowDetails()">
-                    <p class="image-name"><?php echo $row['decription'] ?></p>
-                    <img src="img/<?php echo $row["decription"] ?> " width="350px" alt="">
-                    <!-- <h3> <?php echo $row["title"]; ?> </h3> -->
-                    
-                </div>
+                    <div class="paint" onclick="ShowDetails('<?php echo $row['decription']; ?>')">
+                        <p class="image-name"><?php echo $row['decription'] ?></p>
+                        <img src="img/<?php echo $row["decription"] ?> " width="350px" alt="">
+                        <!-- <h3> <?php echo $row["title"]; ?> </h3> -->
+                        
+                    </div>
             <?php }
             ?>
     </div>
     <div class="show-details">
-                
+        <i class="fa-solid fa-xmark close-show-details"></i>
+        <h1 class="detail-title"></h1>
+        <img class="detail-img" src="" alt="">
     </div>
 
 
@@ -107,7 +109,7 @@
                 <!-- <p class="remember-me"><input type="checkbox">Ghi nhớ đăng nhập</p> -->
                 <a href="#" class="forgot-password"><p>Quên mật khẩu?</p></a>
                 <!-- <a href="HomePage.html"><button type="submit" name="submit" onclick="submitData()">Đăng nhập</button></a> -->
-                <button type="submit" name="submit" onclick="submitData()">Đăng nhập</button>
+                <button type="submit" name="submit" onclick="submitLoginData()">Đăng nhập</button>
                 
                 <p class="not-have-account">Chưa có tài khoản? <a href="#" class="switch" id="switch-to-sign-up">Đăng ký</a></p>
             </form>
@@ -135,7 +137,7 @@
                 </div>
             
                 <label for=""><input type="checkbox"> Tôi đồng ý với các <a href="#">Điều khoản & Chính sách</a></label>
-                <button type="submit" name="submit" onclick="submitData()">Đăng ký</button>
+                <button type="submit" name="submit" onclick="submitRegisterData()">Đăng ký</button>
                 <p class="not-have-account">Đã có tài khoản? <a href="#" class="switch" id="switch-to-login">Đăng nhập</a></p>
             </form>
         </div>
