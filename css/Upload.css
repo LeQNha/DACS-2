@@ -9,6 +9,7 @@
 }
 body{
     background: rgb(247, 245, 245);
+    padding-top: 165px;
 }
 .cover-div{
     position: fixed;
@@ -25,34 +26,8 @@ header{
     top: 0;
     width: 100%;
 }
-.top-bar{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: white;
-}
-.top-bar .nav-bar{
-    margin-right: 780px;
-    margin-left: 55px;
-}
-.top-bar .nav-bar li{
-    display: inline-block;
-    padding: 17px;
-}
-.top-bar .account{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.top-bar .account li{
-    padding-left: 14px;
-}
-.account li img{
-    cursor: pointer;
-}
 .container form{
     display: flex;
-    margin-top: 16vh;
 }
 .image-container{
     background: white;
@@ -86,99 +61,29 @@ header{
     border-radius: 5px;
     margin-left: 2%;
 }
-
-
-
-
-
-
-
-/*login sign up */
-.sign-up-form .input-box input{
-    padding: 7px;
+.image-infor input{
+    display: block;
 }
-.sign-up-form label{
-    margin-top: 30px;
-}
-.sign-up-form label a{
-    color: yellowgreen;
-}
-.sign-up-form label a:hover{
-    text-decoration: underline;
-}
-.form-box{
-    background: white;
-    box-shadow: 0 0 4px black;
-    width: 380px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    top: -800px;
-    left: 600px;
-    z-index: 20;
-    transition: ease 0.8s;
-
-    border-radius: 15px;
-}
-.form-box h2{
-    margin-top: 20px;
-    color: rgb(127, 168, 45);
-}
-.form-box .close{
-    font-size: 25px;
-    margin-left: 340px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-.login-form form{
-    margin-top: 10px;
-}
-.form-box .input-box{
-    margin-top: 30px;   
-    border-bottom: 2px solid rgb(199, 187, 187);
-    width: 270px;
-}
-.login-form .forgot-password{
-    margin-left: 155px;
-    font-size: 15px;
-    color: yellowgreen;
-}
-.login-form .forgot-password:hover{
-    text-decoration: underline;
-}
-.form-box button{
-    margin-top: 30px;
-    height: 40px;
-    width: 150px;
-    background: yellowgreen;
-    cursor: pointer;
-    font-size: 20px;
+.image-infor input[type='submit']{
+    padding: 15px 33px;
+    background: rgb(169, 201, 161);
+    border-radius: 25px;
     color: white;
-    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;        
 }
-.form-box .not-have-account{
-    margin-top: 30px;
-    margin-bottom: 20px;
+#title{
+    width: 300px;
+    height: 10vh;
+    border-bottom: 1px solid rgb(186, 176, 176);
 }
-.form-box .not-have-account a{
-    color: yellowgreen;
-}
-.form-box .not-have-account a:hover{
-    text-decoration: underline;
-}
-.form-box .input-box input{
-    padding: 10px;
-}
-.remember-me{
-    position: absolute;
-    top: 228px;
-    left: 56px;
-    font-size: 15px;
-    margin-top: 3px;
-}
+
+
+
+
+
+
+
 .scroll-up{
     position: fixed;
     left: 100%;

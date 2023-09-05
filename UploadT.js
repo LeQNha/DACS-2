@@ -1,11 +1,13 @@
 
 imageShow = document.querySelector('.image-show');
-input = document.querySelector('form input');
-
+input = document.querySelector('.myImage');
+var isUpLoaded = false;
 
 // imageShow.addEventListener('click', () => input.click());
 imageShow.addEventListener("click", function() {
-  input.click();
+  if(!isUpLoaded){
+    input.click();
+  }
 });
 
 input.addEventListener('change', function(e) {
@@ -19,15 +21,21 @@ input.addEventListener('change', function(e) {
       imageShow.innerHTML = '<img src="' + e.target.result + '" alt="Selected Image">';
       
       img = document.querySelector('.image-show img');
-      var width = img.naturalWidth;
-      var height = img.naturalHeight;
+      img.onload = function(){
+        var width = img.naturalWidth;
+        var height = img.naturalHeight;
 
-      if (width >= height) {
-        img.style.width = "100%";
-        img.style.height = "auto";   
-      } else {
-        img.style.height = "100%";
-        img.style.width = "auto";
+        if (width >= height) {
+          img.style.width = "100%";
+          img.style.height = "auto";
+          console.log("rong");   
+        } else {
+          img.style.height = "100%";
+          img.style.width = "auto";
+          console.log("cao");
+        }
+
+        isUpLoaded = true;
       }
     };
 
