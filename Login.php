@@ -11,13 +11,18 @@
             var xhr = new XMLHttpRequest();
             var formData = new FormData(document.getElementById('loginForm'));
             xhr.open('POST', 'LoginProcess.php', true);
-
-            xhr.onload = function(){
+            var alertP = document.getElementById('alertP');
+            event.preventDefault();
+            xhr.onreadystatechange = function(){
                 if(xhr.status === 200){
                     if(xhr.responseText === 'success'){
                         window.location.href = 'Home.php';
                     }else{
-                        alert(xhr.responseText);
+
+                        // alert(xhr.responseText);
+                        alertP.innerHTML = xhr.responseText;
+                        // alertP.style.display = "block";
+                        
                     }
                 }else{
                     alert('Đã xảy ra lỗi! Hãy thử lại.');
@@ -25,14 +30,19 @@
             }
             xhr.send(formData);
         }
+        
+        
+     
     </script>
+   
 </head>
 <body>
     <div class="container">
         <div class="form-box login-form" id="login-form">
             <h1>Đăng nhập</h1>
-            <form action="#" method="post" id="loginForm">
-                <input type="text" name="username" id="username" placeholder="Tài khoản" required>                
+            <div id="alertP"></div>
+            <form  method="post" id="loginForm">
+                <input type="text" name="username" id="username" placeholder="Tài khoản"  required>                
                 <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
                         
                 <a href="#" class="forgot-password"><p>Quên mật khẩu?</p></a>
@@ -43,5 +53,16 @@
             </form>
         </div>
     </div>
+    <script>
+        function AlertDisapear() {
+            
+            var alertP = document.getElementById('alertP');
+            alertP.innerHTML = "";
+        };
+        document.getElementById('username').addEventListener('click', AlertDisapear);
+        document.getElementById('password').addEventListener('click', AlertDisapear);
+        
+        //document.getElementById('password').addEventListener("click", AlertDisapear);
+    </script>
 </body>
 </html>

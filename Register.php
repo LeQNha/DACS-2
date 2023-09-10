@@ -11,14 +11,15 @@
             var xhr = new XMLHttpRequest();
             var formData = new FormData(document.getElementById('registerForm'));
             xhr.open('POST', 'RegisterProcess.php', true);
-
+            event.preventDefault();
             xhr.onload = function(){
                 console.log(xhr.responseText);
                 if(xhr.status === 200){
                     if(xhr.responseText === 'success'){
                         window.location.href = 'Home.php';
                     }else{
-                        alert(xhr.responseText);
+                        // alert(xhr.responseText);
+                        alertP.innerHTML = xhr.responseText;
                     }
                 }else{
                     alert('Đã xảy ra lỗi! Hãy thử lại.');
@@ -32,15 +33,16 @@
 <div class="container">
         <div class="form-box sign-up-form" id="sign-up-form">
             <h1>Đăng ký</h1>
+            <div id="alertP"></div>
             <form action="#" method="post" id="registerForm">
                 
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
              
-                    <input type="text" name="username" placeholder="Tên tài khoản" required>
+                    <input type="text" name="username" id="username" placeholder="Tên tài khoản" required>
                 
-                    <input type="password" name="password" placeholder="Mật khẩu" required>
+                    <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
 
-                    <input type="password" name="confirmpassword" placeholder="Xác nhận mật khẩu" required>
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Xác nhận mật khẩu" required>
             
                 <label for=""><input type="checkbox" class="checkbox"> <span>Tôi đồng ý với các</span> <a href="#">Điều khoản & Chính sách</a></label> 
                 
@@ -49,5 +51,18 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function AlertDisapear() {
+            
+            var alertP = document.getElementById('alertP');
+            alertP.innerHTML = "";
+        };
+        document.getElementById('email').addEventListener('click', AlertDisapear);
+        document.getElementById('username').addEventListener('click', AlertDisapear);
+        document.getElementById('password').addEventListener('click', AlertDisapear);
+        document.getElementById('confirmpassword').addEventListener('click', AlertDisapear);
+        //document.getElementById('password').addEventListener("click", AlertDisapear);
+    </script>
 </body>
 </html>

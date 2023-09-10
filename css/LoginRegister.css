@@ -23,6 +23,7 @@
 }
 .form-box h1{
     margin-top: 45px;
+    margin-bottom: 5px;
 }
 .form-box form{
     margin-top: 15px;
@@ -76,4 +77,8 @@
 }
 #registerForm button{
     margin-top: 10px;
+}
+#alertP{
+    height: 16px;
+    color: red;
 }

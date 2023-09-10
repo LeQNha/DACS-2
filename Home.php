@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +25,32 @@
             <?php }
             ?>
     </div>
-    <div class="show-details">
-        <i class="fa-solid fa-xmark close-show-details"></i>
-        <h1 class="detail-title"></h1>
-        <img class="detail-img" src="" alt="">
+    <div class="show-details-container">
+            <ul class="behavior-list">
+                <li class=" close-show-details"><i class="fa-solid fa-xmark"></i></li>
+                <li>
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <span>Yêu thích</span>
+                </li>
+                <li style="padding: 0px 20px;">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Lưu</span>
+                </li>
+            </ul>
+        <div class="show-details">
+            <div class="image-details">
+                <div class="uploader">
+                    <img class="detail-avatar" src="webimg/defaultAvatar.png" alt="">
+                    <div>
+                        <span class="detail-uploader">uploader</span>
+                        <span>Follow</span>
+                    </div>
+                </div>
+                <img class="detail-img" src="" alt="">
+                <h1 class="detail-title"></h1>
+            </div>
+        </div>
     </div>
-
         <a href="#" class="scroll-up">
             <i class="fa-sharp fa-solid fa-angle-up"></i>
         </a>

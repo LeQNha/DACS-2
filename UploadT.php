@@ -13,21 +13,28 @@
     <?php include 'Header.php'; ?>
     
     <div class="container">
-        <form action="UploadImageT.php" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" id="upload-form" enctype="multipart/form-data">
             <div class="image-container">
+            <div id="trash-can"><i class="fa-solid fa-trash-can"></i></div>
                 <div class="image-show">
+                    <img id="selected-image" src="" alt="">
                     <p>Nhấp vào để tải lên</p>
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
                 </div>
             </div>
             <div class="image-infor">
                 <input type="file" name="myImage" class="myImage">
-                <input type="submit" name="submit" value="Đăng tải">
+                <div class="upload-date"> <?php echo date('d/m/Y') ?> </div>
                 <input type="text" name="title" id="title" placeholder="Tiêu đề">
-                <input type="text" name="description" id="description" placeholder="Description">
+                <div class="title-bottom-border bottom-border" id="title-bottom-border"></div>
+                <!-- <input type="" name="description" id="description" placeholder="Description"> -->
+                <textarea name="description" id="description" placeholder="Mô tả" oninput="autoResize()"></textarea>
+                <div class="description-bottom-border bottom-border" id="description-bottom-border"></div>
+                <input type="submit" name="submit" value="Đăng tải" id="submit">
             </div>
         </form>
     </div>
-    
+
     <!-- <form action="UploadImageT.php" style="margin-top: 100px;" method="post" enctype="multipart/form-data">
         <div>
             <div>

@@ -65,6 +65,7 @@ document.addEventListener('click', function(event) {
     // Ẩn submenu nếu click xảy ra bên ngoài
     avatar.style.borderColor = "transparent";
     submenu.style.display = 'none';
+
   }
 });
 
@@ -94,7 +95,7 @@ document.addEventListener('click', function(event) {
 //Show img details
 
 function ShowDetails(pid){
-  var imgDetailsContainer = document.querySelector('.show-details');
+  var showDetailsContainer = document.querySelector('.show-details-container');
   var detailTile = document.querySelector('.detail-title');
   var detailImg = document.querySelector('.detail-img');
   
@@ -103,7 +104,7 @@ function ShowDetails(pid){
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = function() {
     var receivedData = JSON.parse(xhr.responseText);
-    imgDetailsContainer.style.display = "block";
+    showDetailsContainer.style.display = "block";
     // imgDetailsContainer.innerHTML = receivedData.title;
     detailTile.textContent = receivedData.title;
     detailImg.src = "./img/"+receivedData.path;
@@ -115,8 +116,9 @@ function ShowDetails(pid){
   //close show details
   var closeShowDetailsButton = document.querySelector('.close-show-details');
   closeShowDetailsButton.addEventListener('click',function(){
-    var imgDetailsContainer = document.querySelector('.show-details');
-    imgDetailsContainer.style.display = "none";
+    console.log("hksdfuihsdui");
+    var showDetailsContainer = document.querySelector('.show-details-container');
+    showDetailsContainer.style.display = "none";
   });
 }
 
