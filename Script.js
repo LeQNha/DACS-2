@@ -113,12 +113,16 @@ function ShowDetails(pid){
 
   xhr.send("pid=" + encodeURIComponent(pid));
 
+  //ngăn trang web cuộn
+  document.body.style.overflow = "hidden";
+
   //close show details
   var closeShowDetailsButton = document.querySelector('.close-show-details');
   closeShowDetailsButton.addEventListener('click',function(){
     console.log("hksdfuihsdui");
     var showDetailsContainer = document.querySelector('.show-details-container');
     showDetailsContainer.style.display = "none";
+    document.body.style.overflow = "auto";
   });
 }
 

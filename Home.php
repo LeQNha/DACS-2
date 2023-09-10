@@ -29,7 +29,11 @@
             <ul class="behavior-list">
                 <li class=" close-show-details"><i class="fa-solid fa-xmark"></i></li>
                 <li>
-                    <i class="fa-solid fa-thumbs-up"></i>
+                    <img src="webimg/defaultAvatar.png" alt="">
+                    <span>Follow</span>
+                </li>
+                <li>
+                    <i class="fa-regular fa-thumbs-up"></i>
                     <span>Yêu thích</span>
                 </li>
                 <li style="padding: 0px 20px;">
@@ -38,7 +42,6 @@
                 </li>
             </ul>
         <div class="show-details">
-            <div class="image-details">
                 <div class="uploader">
                     <img class="detail-avatar" src="webimg/defaultAvatar.png" alt="">
                     <div>
@@ -46,11 +49,14 @@
                         <span>Follow</span>
                     </div>
                 </div>
-                <img class="detail-img" src="" alt="">
-                <h1 class="detail-title"></h1>
-            </div>
+                <div class="image-details">
+                    <img class="detail-img" src="img/64c215a858da0.png" alt="">
+                    <h1 class="detail-title">tes</h1>
+                    <p class="detail-description">ádadada</p>
+                </div>
         </div>
     </div>
+    
         <a href="#" class="scroll-up">
             <i class="fa-sharp fa-solid fa-angle-up"></i>
         </a>
