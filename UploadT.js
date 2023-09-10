@@ -1,14 +1,16 @@
 
+var title = document.getElementById('title');
+var description = document.getElementById('description');
 window.onload = function() {
-  var titleInput = document.getElementById('title');
+  
   var titleInputBottom = document.getElementById('title-bottom-border');
-  var titleInputHeight =  titleInput.offsetTop + titleInput.offsetHeight;
+  var titleInputHeight =  title.offsetTop + title.offsetHeight;
   titleInputBottom.style.top = `${titleInputHeight + 7}px`;
 
-  var descriptionTextarea = document.getElementById('description');
-  var escriptionTextareaBottom = document.getElementById('description-bottom-border');
-  var descriptionTextareaHeight =  descriptionTextarea.offsetTop + descriptionTextarea.offsetHeight;
-  escriptionTextareaBottom.style.top = `${descriptionTextareaHeight + 7}px`;
+  
+  var descriptionTextareaBottom = document.getElementById('description-bottom-border');
+  var descriptionTextareaHeight =  description.offsetTop + description.offsetHeight;
+  descriptionTextareaBottom.style.top = `${descriptionTextareaHeight + 7}px`;
 
   var submenu = document.getElementById("submenu");
   submenu.style.display = "none";
@@ -84,11 +86,13 @@ submitBtn.addEventListener('click', function(){
       if(xhr.responseText == 'success'){
         alert('Đăng tải thành công!');
         console.log('đăng thành công');
-        document.getElementById('title').value = "";
-        document.getElementById('description').value ="";
+        title.value = "";
+        title.value ="";
         isUpLoaded = false;
         img.src = "";
         trashCan.style.display = "none";
+      }if(xhr.responseText == "invalid title"){
+        document.querySelector('.alertP').style.display = "block"; 
       }else{
         alert(xhr.responseText);
         console.log('else');
@@ -107,11 +111,16 @@ var count = 0;
 function autoResize() {
   const textarea = document.getElementById('description');
   const div = document.getElementsByClassName('description-bottom-border')[0];
-  
+
   textarea.style.height = 'auto';
   textarea.style.height = (textarea.scrollHeight) + 'px';
   
   const textareaBottom =  textarea.offsetTop + textarea.clientHeight;
   div.style.top = `${textareaBottom + 7}px`;
 }
+//tắt thông báo tiêu đề ko hợp lệ{
+title.addEventListener('click', function(){
+  document.querySelector('.alertP').style.display="none";
+});
+
 

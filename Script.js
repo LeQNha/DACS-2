@@ -98,9 +98,11 @@ function ShowDetails(pid){
   var showDetailsContainer = document.querySelector('.show-details-container');
   var detailTile = document.querySelector('.detail-title');
   var detailImg = document.querySelector('.detail-img');
+  var detailDescription = document.querySelector('.detail-description');
+  var dateUploaded = document.querySelector('.detail-date-uploaded');
   
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'ShowProductDetails.php');
+  xhr.open('POST', 'ShowImageDetails.php');
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = function() {
     var receivedData = JSON.parse(xhr.responseText);
@@ -108,6 +110,8 @@ function ShowDetails(pid){
     // imgDetailsContainer.innerHTML = receivedData.title;
     detailTile.textContent = receivedData.title;
     detailImg.src = "./img/"+receivedData.path;
+    detailDescription.textContent = receivedData.description;
+    dateUploaded.textContent = receivedData.dateuploaded
     
   };
 

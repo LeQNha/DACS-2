@@ -33,7 +33,7 @@ header{
     background: white;
     height: 570px;
     width: 570px;
-    margin-left: 8%;
+    margin-left: 11%;
     /* margin-top: 16vh; */
     box-shadow: 0 0 4px rgb(189, 186, 186);
     border-radius: 5px;
@@ -149,6 +149,13 @@ header{
     cursor: pointer;
     top: 65vh;     
     left: 420px;   
+}
+.alertP{
+    position: absolute;
+    top: 18vh;
+    left: 47px;
+    color: red;
+    display: none;
 }
 
 

@@ -16,9 +16,9 @@
             $rows = mysqli_query($conn, $query);
             
             foreach($rows as $row){ ?>
-                    <div class="paint" onclick="ShowDetails('<?php echo $row['decription']; ?>')">
-                        <p class="image-name"><?php echo $row['decription'] ?></p>
-                        <img src="img/<?php echo $row["decription"] ?> " width="350px" alt="">
+                    <div class="paint" onclick="ShowDetails('<?php echo $row['path']; ?>')">
+                        <p class="image-name"><?php echo $row['path'] ?></p>
+                        <img src="img/<?php echo $row["path"] ?> " width="350px" alt="">
                         <!-- <h3> <?php echo $row["title"]; ?> </h3> -->
                         
                     </div>
@@ -33,11 +33,11 @@
                     <span>Follow</span>
                 </li>
                 <li>
-                    <i class="fa-regular fa-thumbs-up"></i>
+                    <i class="fa-regular fa-thumbs-up" id="like-button"></i>
                     <span>Yêu thích</span>
                 </li>
-                <li style="padding: 0px 20px;">
-                    <i class="fa-regular fa-heart"></i>
+                <li>
+                    <i class="fa-regular fa-heart" id="save-button"></i>
                     <span>Lưu</span>
                 </li>
             </ul>
@@ -48,6 +48,7 @@
                         <span class="detail-uploader">uploader</span>
                         <span>Follow</span>
                     </div>
+                    <p class="detail-date-uploaded">111-111-111</p>
                 </div>
                 <div class="image-details">
                     <img class="detail-img" src="img/64c215a858da0.png" alt="">

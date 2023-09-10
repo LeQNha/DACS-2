@@ -110,7 +110,8 @@ body{
 }
 .behavior-list li i.fa-xmark{
     padding: 11px 14px;
-    background: lightgrey;
+    background: rgb(69, 65, 65);
+    color: white;
 }
 .behavior-list li i.fa-thumbs-up{
     color: blue;
@@ -140,6 +141,13 @@ body{
 .uploader .detail-avatar{
     height: 6vh;
     margin: 0px 10px;
+}
+.uploader .detail-date-uploaded{
+    position: absolute;
+    left: 1195px;
+    top: 25px;
+    color: white;
+    font-style: italic;
 }
 .image-details{
     display: flex;

@@ -27,27 +27,14 @@
                 <div class="upload-date"> <?php echo date('d/m/Y') ?> </div>
                 <input type="text" name="title" id="title" placeholder="Tiêu đề">
                 <div class="title-bottom-border bottom-border" id="title-bottom-border"></div>
-                <!-- <input type="" name="description" id="description" placeholder="Description"> -->
+                <p class="alertP">Tiêu đề không hợp lệ!</p>
                 <textarea name="description" id="description" placeholder="Mô tả" oninput="autoResize()"></textarea>
                 <div class="description-bottom-border bottom-border" id="description-bottom-border"></div>
                 <input type="submit" name="submit" value="Đăng tải" id="submit">
             </div>
         </form>
     </div>
-
-    <!-- <form action="UploadImageT.php" style="margin-top: 100px;" method="post" enctype="multipart/form-data">
-        <div>
-            <div>
-                <input type="file" name="myImage">
-            </div>
-        </div>
-        <input type="submit" name="submit" value="upload">
-        <input type="text" name="title" id="title" placeholder="Title">
-        <input type="text" name="description" id="description" placeholder="Description">
-    </form> -->
-
     
-
 
         <a href="#" class="scroll-up">
             <i class="fa-sharp fa-solid fa-angle-up"></i>
