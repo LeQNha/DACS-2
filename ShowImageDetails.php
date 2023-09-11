@@ -9,6 +9,7 @@
         $imagePath="";
         $description ="";
         $dateuploaded = "";
+        $uploader = "";
 
 
         $query = "SELECT * FROM imgupload WHERE path = '$pid'";
@@ -21,13 +22,15 @@
                 $dateuploaded = $row['dateuploaded'];
                 $datemonthyear = explode('-', $dateuploaded);
                 $dateuploaded = $datemonthyear[2]." thg ".$datemonthyear[1].", ".$datemonthyear[0];
+                $uploader = $row['uploader'];
             }
         }
         $message = array(
                             "title"=>$title, 
                             "path"=>$imagePath, 
                             "description"=>$description,
-                            "dateuploaded"=>$dateuploaded
+                            "dateuploaded"=>$dateuploaded,
+                            "uploader"=>$uploader
                         );
         echo json_encode($message);
     };

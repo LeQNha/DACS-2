@@ -12,9 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Header.css">
     <title>Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-<header>
+<header class="header">
         <div class="top-bar">
             <ul class="nav-bar">
                 <a href="Home.php"><li><h2>See</h2></li></a>
@@ -53,7 +55,7 @@
                 </div>
                 <ul>
                     <li><a href="#">Cài đặt</a></li>
-                    <li><a href="#">Trang cá nhân</a></li>
+                    <li><a href="UserPage.php">Trang cá nhân</a></li>
                     <hr>
                     <li><a href="Logout.php">Đăng xuất</a></li>
                 </ul>

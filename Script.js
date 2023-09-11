@@ -34,6 +34,12 @@ const header = document.querySelector(".header");
   } else {
     scrollUp.style.left = '100%';
   }
+
+  //header chuyển về lại white
+  if(scroll >50){
+    document.querySelector('.top-bar').style.background = "white";
+    document.querySelector('.second-bar').style.background = "white";
+  }
 });
 
 
@@ -100,6 +106,7 @@ function ShowDetails(pid){
   var detailImg = document.querySelector('.detail-img');
   var detailDescription = document.querySelector('.detail-description');
   var dateUploaded = document.querySelector('.detail-date-uploaded');
+  var detailUploader = document.querySelector('.detail-uploader');
   
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'ShowImageDetails.php');
@@ -112,6 +119,7 @@ function ShowDetails(pid){
     detailImg.src = "./img/"+receivedData.path;
     detailDescription.textContent = receivedData.description;
     dateUploaded.textContent = receivedData.dateuploaded
+    detailUploader.textContent = receivedData.uploader;
     
   };
 
