@@ -1,27 +1,4 @@
 
-var coverDiv = document.getElementById('cover-div');
-
-function CloseLogin(){
-   coverDiv.style.top = '-100%';
-   loginForm.style.top = '-800px';
-}
-
-function CloseSignUp(){
-   coverDiv.style.top = '-100%';
-   signUpForm.style.top = '-800px';
-}
-function SwitchToLogin(){
-    signUpForm.style.top = '-800px';
-    loginForm.style.top = '140px';
- 
-}
-
-function SwitchToSignUp(){
-    loginForm.style.top = '-800px';
-    signUpForm.style.top = '100px';
- 
-}
-
 
 /////////
 

@@ -54,7 +54,7 @@
                     ?>
                 </div>
                 <ul>
-                    <a href="#"><li>Cài đặt</li></a>
+                    <a href="EditProfile.php"><li>Cài đặt</li></a>
                     <a href="UserPage.php"><li>Trang cá nhân</li></a>
                     <hr>
                     <a href="Logout.php"><li>Đăng xuất</li></a>
@@ -71,5 +71,6 @@
         </div>
     </header>
     <script src="Script.js"></script>
+
 </body>
 </html>

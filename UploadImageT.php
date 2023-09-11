@@ -34,7 +34,7 @@
                     $newDestination = "img/".$newImageName;
                     
                     move_uploaded_file($tmpName, $newDestination);
-                    $query = "INSERT INTO imgupload(title, path, description, uploader) VALUES('$title','$newImageName','$description','$uploader')";
+                    $query = "INSERT INTO imgupload(title, path, description, username) VALUES('$title','$newImageName','$description','$uploader')";
                     mysqli_query($conn, $query);
                     echo "success";
                     

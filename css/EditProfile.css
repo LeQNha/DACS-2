@@ -1,6 +1,47 @@
 body{
     padding-top: 165px;
 }
+.alert-message{
+    position: fixed;
+    top: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    padding: 15px 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 6;
+    left: 45%;
+    opacity: 0.3;
+
+    transition: all ease 0.4s;
+}
+.actions{
+    position: fixed;
+    top: 30vh;
+    left: 1290px;
+}
+.actions li{
+    margin-bottom: 20px;
+    /* background: pink; */
+    font-size: 27px;
+    cursor: pointer;
+    width: 230px;
+    padding: 15px;
+    border-radius: 15px 0 0 0;
+    box-shadow: 0px 0px 5px gray;
+}
+.actions li:hover{
+    opacity: 0.8;
+}
+.actions li i{
+    font-size: 30px;
+}
+.actions li i.save-icon{
+    color: cornflowerblue;
+}
+.actions li i.set-back-icon{
+    color: yellowgreen;
+}
 .container{
     display: flex;
 }
@@ -9,6 +50,9 @@ input:focus {
 }
 textarea:focus{
     outline: 2px solid rgb(169, 201, 161);
+}
+.edit-profile div{
+    margin-bottom: 10px;
 }
 .edit-profile .edit-avatar img{
     height: 90.4px;
@@ -53,4 +97,5 @@ textarea:focus{
     display: block;
     border-radius: 15px;
     padding: 10px;
+    font-size: 18px;
 }

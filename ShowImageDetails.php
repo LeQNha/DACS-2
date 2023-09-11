@@ -22,7 +22,7 @@
                 $dateuploaded = $row['dateuploaded'];
                 $datemonthyear = explode('-', $dateuploaded);
                 $dateuploaded = $datemonthyear[2]." thg ".$datemonthyear[1].", ".$datemonthyear[0];
-                $uploader = $row['uploader'];
+                $uploader = $row['username'];
             }
         }
         $message = array(
