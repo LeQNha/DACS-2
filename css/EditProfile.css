@@ -1,0 +1,56 @@
+body{
+    padding-top: 165px;
+}
+.container{
+    display: flex;
+}
+input:focus {
+    outline: 2px solid rgb(169, 201, 161); /* Thay đổi màu viền của input khi được nhấn vào */
+}
+textarea:focus{
+    outline: 2px solid rgb(169, 201, 161);
+}
+.edit-profile .edit-avatar img{
+    height: 90.4px;
+    width: 90.4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.edit-profile .edit-avatar img:hover{
+    opacity: 0.8;
+}
+.edit-profile .edit-avatar p{
+    padding: 7px;
+    width: 110px;
+    text-align: center;
+    background: rgb(240, 235, 235);
+    border-radius: 15px;
+    font-size: 15px;
+}
+.edit-profile .edit-avatar p:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+.edit-profile label{
+    font-size: 15px;
+    color: gray;
+}
+.edit-profile input{
+    display: block;
+    border: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    font-size: 18px;
+}
+.edit-profile input.ocupation{
+    width: 520px;
+}
+.edit-profile .introduction{
+    resize: none;
+    overflow: hidden;
+    border: 2px solid lightgray;
+    display: block;
+    border-radius: 15px;
+    padding: 10px;
+}

@@ -54,10 +54,10 @@
                     ?>
                 </div>
                 <ul>
-                    <li><a href="#">Cài đặt</a></li>
-                    <li><a href="UserPage.php">Trang cá nhân</a></li>
+                    <a href="#"><li>Cài đặt</li></a>
+                    <a href="UserPage.php"><li>Trang cá nhân</li></a>
                     <hr>
-                    <li><a href="Logout.php">Đăng xuất</a></li>
+                    <a href="Logout.php"><li>Đăng xuất</li></a>
                 </ul>
             </div>   
         </div>

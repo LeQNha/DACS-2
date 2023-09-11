@@ -74,6 +74,9 @@ header{
     padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
+    color: black;
+    margin-left: 5px;
+    font-size: 18px;
 }
 .sub-menu ul li a{
     color: black;
