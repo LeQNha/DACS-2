@@ -25,7 +25,9 @@ body{
     border-radius: 50%;
     cursor: pointer;
 }
-
+#avatar-file{
+    display: none;
+}
 .user-avatar i{
     position: absolute;
     cursor: pointer;

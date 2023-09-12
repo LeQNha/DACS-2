@@ -33,6 +33,7 @@ var trashCan = document.getElementById('trash-can');
 trashCan.addEventListener('click', function(){
   isUpLoaded = false;
   img.src = "";
+  input.value = "";
   trashCan.style.display = "none";
 });
 
@@ -84,17 +85,22 @@ submitBtn.addEventListener('click', function(){
     console.log(xhr.responseText);
     if(xhr.status == 200){
       if(xhr.responseText == 'success'){
-        alert('Đăng tải thành công!');
-        console.log('đăng thành công');
+        // alert('Đăng tải thành công!');
+        msg = 'Đăng tải thành công!';
+        description.value = "";
         title.value = "";
-        title.value ="";
-        isUpLoaded = false;
         img.src = "";
+        input.value = "";
         trashCan.style.display = "none";
-      }if(xhr.responseText == "invalid title"){
+        
+        showAndHide(msg);
+        console.log('xong');
+        
+      }else if(xhr.responseText == "invalid title"){
         document.querySelector('.alertP').style.display = "block"; 
       }else{
-        alert(xhr.responseText);
+        // alert(xhr.responseText);
+        showAndHide(xhr.responseText);
         console.log('else');
       }
     }else{
@@ -103,6 +109,19 @@ submitBtn.addEventListener('click', function(){
   };
   xhr.send(formData);
 });
+//hiện thông báo
+function showAndHide(msg){
+  var alertMessage = document.querySelector('.alert-message');
+  var message = document.querySelector('.alert-message p');
+  message.textContent = msg;
+  alertMessage.style.top = "86vh";
+  alertMessage.style.opacity = "0.9";
+
+   setTimeout(function () {
+       alertMessage.style.top = "100vh"; // Ẩn thẻ div sau khoảng thời gian
+       alertMessage.style.opacity = "0.3";
+     }, 2000); // Thời gian đếm ngược (đơn vị: mili giây)
+}
 
 //drag and drop
 

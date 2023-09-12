@@ -13,7 +13,7 @@
         }else{
             if($_FILES["myImage"]["error"] === 4){
                 // echo "<script> alert('File does not exist'); </script>";
-                echo "Hãy chọn một ảnh";
+                echo "Ảnh chưa tải lên!";
             }else{
                 $fileName = $_FILES["myImage"]["name"];
                 $fileSize = $_FILES["myImage"]["size"];

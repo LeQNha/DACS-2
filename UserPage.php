@@ -13,8 +13,11 @@
 
     <div class="banner">
         <div class="user-avatar">
-            <img src="webimg/userDefaultAvatar.png" alt="">
-            <i class="fa-solid fa-camera"></i>
+            <div class="user-avatar-img-container">
+                <img src="webimg/userDefaultAvatar.png" alt="" id="user-avatar">
+            </div>
+            <i class="fa-solid fa-camera" id="change-avatar-btn"></i>
+            <input type="file" id="avatar-file">
         </div>
     </div>
     <div class="short-introduction">
@@ -23,5 +26,6 @@
         <p class="number-follower">100 người theo dõi</p>
         <a href="EditProfile.php">Chỉnh sửa hồ sơ cá nhân</a>
     </div>
+    <script src="UserPage.js"></script>
 </body>
 </html>

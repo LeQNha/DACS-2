@@ -50,8 +50,11 @@
                 <h2>Thông tin cơ bản</h2>
                 <form action="#" id="edit-profile-form">
                     <div class="edit-avatar">
-                        <img src="./webimg/userDefaultAvatar.png" alt="">
-                        <p><i class="fa-solid fa-camera"></i> Thay đổi</p>
+                        <div class="user-avatar-img-container">
+                            <img src="./webimg/userDefaultAvatar.png" alt="" class="user-avatar" id="user-avatar">
+                        </div>
+                        <p class="change-avatar-btn" id="change-avatar-btn"><i class="fa-solid fa-camera"></i> Thay đổi</p>
+                        <input type="file" name="avatar-file" class="avatar-file" id="avatar-file">
                     </div>
                     
                     <!-- <div>

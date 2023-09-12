@@ -35,7 +35,8 @@
         </form>
     </div>
     
-
+    <div class="alert-message"><p>Thay đổi thành công!</p></div>
+        
         <a href="#" class="scroll-up">
             <i class="fa-sharp fa-solid fa-angle-up"></i>
         </a>
