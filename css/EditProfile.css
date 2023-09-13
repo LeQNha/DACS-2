@@ -45,6 +45,11 @@ body{
 .container{
     display: flex;
 }
+.edit-navigation a{
+    font-size: 18px;
+    color: black;
+    padding: 15px;
+}
 input:focus {
     outline: 2px solid rgb(169, 201, 161); /* Thay đổi màu viền của input khi được nhấn vào */
 }

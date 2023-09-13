@@ -22,7 +22,7 @@
         if(mysqli_num_rows($result) > 0){
             echo "Tài khoản đã tồn tại";
         }else{
-            $query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+            $query = "INSERT INTO user (username, email, password, avatar) VALUES ('$username', '$email', '$password','userDefaultAvatar.png')";
         
                 echo "success";
                 $_SESSION['Login']['username'] = $username;

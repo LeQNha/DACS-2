@@ -9,24 +9,6 @@
 </head>
 <body>
     <?php include "Header.php"; ?>
-
-    <?php
-        $query = "SELECT * FROM user WHERE username = '$username'";
-        $result = mysqli_query($conn, $query);
-
-        if ($result && $result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-        
-            // Truy cập vào dữ liệu
-            $username = $row['username'];
-            $firstname = $row['firstname'];
-            $lastname = $row['lastname'];
-            $ocupation = $row['ocupation'];
-            $location = $row['location'];
-            $introduction = $row['introduction'];
-            
-        } 
-    ?>
     
     <div class="alert-message">Thay đổi thành công!</div>
 
@@ -42,7 +24,7 @@
     </ul>
     <div class="container">
         <div class="edit-navigation">
-            <p>Chỉnh sửa hồ sơ</p>
+            <a href="#edit-profile">Chỉnh sửa hồ sơ</a>
             <!-- <p>Chỉnh sủa tài khoản</p> -->
         </div>
         <div class="edit">
@@ -51,7 +33,7 @@
                 <form action="#" id="edit-profile-form">
                     <div class="edit-avatar">
                         <div class="user-avatar-img-container">
-                            <img src="./webimg/userDefaultAvatar.png" alt="" class="user-avatar" id="user-avatar">
+                            <img src="profileimg/<?php echo $avatar; ?>" alt="" class="user-avatar" id="user-avatar">
                         </div>
                         <p class="change-avatar-btn" id="change-avatar-btn"><i class="fa-solid fa-camera"></i> Thay đổi</p>
                         <input type="file" name="avatar-file" class="avatar-file" id="avatar-file">

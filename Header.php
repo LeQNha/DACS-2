@@ -4,6 +4,22 @@
     if(isset($_SESSION['Login']['username'])){
         $username = $_SESSION['Login']['username'];
     }
+
+    $query = "SELECT * FROM user WHERE username = '$username'";
+        $result = mysqli_query($conn, $query);
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+        
+            // Truy cập vào dữ liệu
+            $username = $row['username'];
+            $firstname = $row['firstname'];
+            $lastname = $row['lastname'];
+            $ocupation = $row['ocupation'];
+            $location = $row['location'];
+            $introduction = $row['introduction'];
+            $avatar = $row['avatar'];
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,24 +42,19 @@
                 <li>Event</li>
             </ul>
             <ul class="account">
-                <?php
-                    if(isset($_SESSION['Login']['username'])){ 
-                ?>
+                
+                    
                     <li><i class="fa-solid fa-bell"></i></li>
                     <li style="font-size: 22px; cursor: pointer;" onclick="ShowSubmenu()"> <?php echo $_SESSION['Login']['username']; ?> </li>
-                    <li><img src="/webimg/defaultAvatar.png" alt="aa" class="avatar" onclick="ShowSubmenu()"></li>
-                <?php 
-                    }else{ 
-                ?>
-                    <li><i class="fa-solid fa-bell"></i></li>
-                    <li><a href="#" class="dang-nhap" id="dang-nhap">ĐĂNG NHẬP</a></li>
-                    <li><a href="#" class="dang-ky" id = "dang-ky">ĐĂNG KÝ</a></li>       
-               <?php }
-                ?>
+                    <li class="user-avatar-container"><img src="/profileimg/<?php echo $avatar; ?>" alt="aa" class="avatar" onclick="ShowSubmenu()"></li>
+
+                
             </ul>
             <div class="sub-menu" id="submenu">
                 <div class="profile">
-                    <img src="webimg/defaultAvatar.png" alt="avatar">
+                    <div class="user-avatar-container">
+                        <img src="profileimg/<?php echo $avatar; ?>" alt="avatar">
+                    </div>
                     <?php
                         echo "<h2>".$username."</h2>"; 
                         $sql = "SELECT * FROM user WHERE username = '$username'";
@@ -63,7 +74,7 @@
         </div>
         <div class="second-bar">
             <form action="" class="search-form">
-                <input type="search" name="" placeholder="Tìm kiếm" autocomplete="off" id="search-box">
+                <input type="search" name="" placeholder="Tìm kiếm" autocomplete="off" id="search-box" style="outline: none;">
                 <label for="search-box" class="fas-fa-search"><i class="fa-solid fa-magnifying-glass"></i></label>         
             </form>
             <a href="UploadT.php">Tạo ảnh</a>

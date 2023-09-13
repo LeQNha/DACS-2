@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="cover-div" id="cover-div"></div>
-    <?php include ("Header.php"); ?>
+    <?php
+        include ("Header.php");
+
+    ?>
     <div class="container">
         <?php
             $query = "SELECT * FROM imgupload";

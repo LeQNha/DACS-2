@@ -13,7 +13,7 @@ saveButton.addEventListener('click', function(){
 
                 showAndHide();
             }else{
-                console.log(xhr.responseText);
+                alert(xhr.responseText);
             }
         }else{
             alert('Đã xảy ra lỗi! Hãy thử lại sau.');
