@@ -31,7 +31,8 @@ function showAndHide(){
     setTimeout(function () {
         alertMessage.style.top = "100vh"; // Ẩn thẻ div sau khoảng thời gian
         alertMessage.style.opacity = "0.3";
-      }, 2000); // Thời gian đếm ngược (đơn vị: mili giây)
+        window.location.href = "EditProfile.php";
+      }, 1000); // Thời gian đếm ngược (đơn vị: mili giây)
 }
 
 //Thay đổi avatar

@@ -10,6 +10,16 @@
     $introduction = $_POST['introduction'];
     $avatar = "";
 
+    $query = "SELECT * FROM user WHERE username = '$username'";
+        $result = mysqli_query($conn, $query);
+
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+        
+            // Truy cập vào dữ liệu
+                $avatar = $row['avatar'];
+        }
+
     if($_FILES['avatar-file']['error'] === 4){
         
     }else{
@@ -32,7 +42,10 @@
             $newDestination = "profileimg/".$newImageName;
                     
             move_uploaded_file($tmpName, $newDestination);
-            $avatar = $newImageName;
+            
+            if($avatar != $newImageName){
+                $avatar = $newImageName;
+            }
             
         }
     }

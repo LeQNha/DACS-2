@@ -22,21 +22,22 @@
             <span> Thiết lập lại</span>
         </li> -->
     </ul>
-    <div class="container">
         <div class="edit-navigation">
-            <a href="#edit-profile">Chỉnh sửa hồ sơ</a>
+            <a href="#">Chỉnh sửa hồ sơ</a>
+            <a href="#">Quản lí tài khoản</a>
             <!-- <p>Chỉnh sủa tài khoản</p> -->
         </div>
+    <div class="container">
         <div class="edit">
             <div class="edit-profile" id="edit-profile">
-                <h2>Thông tin cơ bản</h2>
+                <h3>Thông tin cơ bản</h3>
                 <form action="#" id="edit-profile-form">
                     <div class="edit-avatar">
                         <div class="user-avatar-img-container">
                             <img src="profileimg/<?php echo $avatar; ?>" alt="" class="user-avatar" id="user-avatar">
                         </div>
                         <p class="change-avatar-btn" id="change-avatar-btn"><i class="fa-solid fa-camera"></i> Thay đổi</p>
-                        <input type="file" name="avatar-file" class="avatar-file" id="avatar-file">
+                        <input type="file" name="avatar-file" class="avatar-file" id="avatar-file" value="<?php echo $avatar; ?>">
                     </div>
                     
                     <!-- <div>
@@ -63,11 +64,24 @@
                     </div>
                     <div>
                         <label for="introduction">Giới thiệu</label>
-                        <textarea name="introduction" class="introduction" id="introduction" cols="55" rows="10"> <?php echo $introduction; ?> </textarea>
+                        <textarea name="introduction" class="introduction" id="introduction" rows="10"> <?php echo $introduction; ?> </textarea>
                     </div>
                 </form>    
             </div>
-            <div class="edit-account" id="edit-account"></div>
+            <div class="edit-account" id="edit-account">
+                <div>
+                    <label for="username">Tài khoản</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div>
+                    <label for="password">Mật khẩu</label>
+                    <input type="text" name="password" id="password">
+                </div>
+                <div>
+                    <label for="confirmpassword">Xác nhận mật khẩu</label>
+                    <input type="text" name="confirmpassword" id="confirmpassword">
+                </div>
+            </div>
         </div>
     </div>
 

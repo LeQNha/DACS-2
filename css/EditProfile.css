@@ -1,5 +1,6 @@
 body{
     padding-top: 165px;
+    background: rgb(247, 245, 245);
 }
 .alert-message{
     position: fixed;
@@ -43,21 +44,51 @@ body{
     color: yellowgreen;
 }
 .container{
-    display: flex;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    background: rgb(247, 245, 245);
+}
+.edit-navigation{
+    position: fixed;
+    background: white;
+    left: 15%;
 }
 .edit-navigation a{
     font-size: 18px;
     color: black;
     padding: 15px;
+    display: block;
+    font-weight: 500;
+}
+input{
+    display: block;
 }
 input:focus {
-    outline: 2px solid rgb(169, 201, 161); /* Thay đổi màu viền của input khi được nhấn vào */
+    outline: 1px solid rgb(169, 201, 161); /* Thay đổi màu viền của input khi được nhấn vào */
 }
 textarea:focus{
     outline: 2px solid rgb(169, 201, 161);
 }
+.edit-profile{
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 0 3px rgb(184, 179, 179);
+    border-radius: 5px;
+    width: 740px;
+    height: 696px;
+    margin-left: 30%;
+}
 .edit-profile div{
     margin-bottom: 10px;
+}
+.edit-avatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .edit-profile .edit-avatar .user-avatar-img-container{
     height: 90.4px;
@@ -95,15 +126,14 @@ textarea:focus{
     color: gray;
 }
 .edit-profile input{
-    display: block;
     border: 2px solid lightgray;
     padding: 10px;
     border-radius: 10px;
-    width: 250px;
+    width: 320px;
     font-size: 18px;
 }
 .edit-profile input.ocupation{
-    width: 520px;
+    width: 660px;
 }
 .edit-profile .introduction{
     resize: none;
@@ -113,4 +143,5 @@ textarea:focus{
     border-radius: 15px;
     padding: 10px;
     font-size: 18px;
+    width: 660px;
 }
