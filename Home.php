@@ -48,7 +48,7 @@
                 <div class="uploader">
                     <img class="detail-avatar" src="webimg/defaultAvatar.png" alt="">
                     <div>
-                        <span class="detail-uploader">uploader</span>
+                        <a href=""></a><span class="detail-uploader">uploader</span>
                         <span>Follow</span>
                     </div>
                     <p class="detail-date-uploaded">111-111-111</p>

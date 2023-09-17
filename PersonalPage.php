@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserPage</title>
-    <link rel="stylesheet" href="css/UserPage.css">
+    <link rel="stylesheet" href="css/PersonalPage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -45,6 +45,6 @@
         <p class="number-follower">100 người theo dõi</p>
         <a href="EditProfile.php">Chỉnh sửa hồ sơ cá nhân</a>
     </div>
-    <script src="UserPage.js"></script>
+    <script src="PersonalPage.js"></script>
 </body>
 </html>

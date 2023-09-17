@@ -5,16 +5,22 @@ body{
 .alert-message{
     position: fixed;
     top: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
     border-radius: 3px;
     padding: 15px 20px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 6;
-    left: 45%;
     opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     transition: all ease 0.4s;
+}
+.alert-message p{
+    background: black;
+    padding: 15px;
 }
 .actions{
     position: fixed;
@@ -63,8 +69,13 @@ body{
     display: block;
     font-weight: 500;
 }
-input{
+.container input{
     display: block;
+    border: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    width: 320px;
+    font-size: 18px;
 }
 input:focus {
     outline: 1px solid rgb(169, 201, 161); /* Thay đổi màu viền của input khi được nhấn vào */
@@ -125,13 +136,13 @@ textarea:focus{
     font-size: 15px;
     color: gray;
 }
-.edit-profile input{
+/* .edit-profile input{
     border: 2px solid lightgray;
     padding: 10px;
     border-radius: 10px;
     width: 320px;
     font-size: 18px;
-}
+} */
 .edit-profile input.ocupation{
     width: 660px;
 }
@@ -144,4 +155,14 @@ textarea:focus{
     padding: 10px;
     font-size: 18px;
     width: 660px;
+    height: 218px;
+}
+.edit-account{
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 0 3px rgb(184, 179, 179);
+    border-radius: 5px;
+    width: 740px;
+    margin-left: 30%;
+    margin-top: 50px;
 }

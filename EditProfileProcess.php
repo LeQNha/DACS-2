@@ -3,6 +3,11 @@
     include "dbc.php";
 
     $username = $_SESSION['Login']['username'];
+
+    $email = $_POST['email'];
+    $newUsername = $_POST['username'];
+    $password = $_POST['password'];
+    $confirmpassword =$_POST['confirmpassword'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $ocupation = $_POST['ocupation'];
@@ -50,13 +55,26 @@
         }
     }
 
-    $query = "UPDATE user
-              SET firstname = '$firstname', lastname = '$lastname', ocupation = '$ocupation', location = '$location', introduction ='$introduction', avatar = '$avatar' 
+    if($password != $confirmpassword){
+        echo "Xác nhận lại mật khẩu!";
+    }else if(empty($email)){
+        echo "Email không hợp lệ!";
+    }else if(empty($newUsername)){
+        echo "Tài khoản không hợp lệ!";
+    }else if(empty($password)){
+        echo "Mật khẩu không hợp lệ!";
+    }else{
+        $query = "UPDATE user
+              SET email = '$email', username = '$newUsername', password = '$password', firstname = '$firstname', lastname = '$lastname', ocupation = '$ocupation', location = '$location', introduction ='$introduction', avatar = '$avatar' 
               WHERE username = '$username';";
-              
-    $result = mysqli_query($conn, $query);
 
-    echo "success";
+              $_SESSION['Login']['username'] = $newUsername;
+
+        $result = mysqli_query($conn, $query);
+        echo "success";
+    }
+
+    
     // echo $introduction;
 
 ?>

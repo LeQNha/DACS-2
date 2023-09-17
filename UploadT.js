@@ -35,6 +35,9 @@ trashCan.addEventListener('click', function(){
   img.src = "";
   input.value = "";
   trashCan.style.display = "none";
+  imageShow.style.background = '#fafbff';
+  document.querySelector('.image-show p').style.display = 'block';
+  document.querySelector('.image-show i').style.display = 'block';
 });
 
 input.addEventListener('change', function(e) {
@@ -66,7 +69,10 @@ input.addEventListener('change', function(e) {
         isUpLoaded = true;
         
         trashCan.style.display = "block";
-        
+        imageShow.style.background = 'white';
+        document.querySelector('.image-show p').style.display = 'none';
+        document.querySelector('.image-show i').style.display = 'none';
+
       }
     };
 
@@ -94,7 +100,6 @@ submitBtn.addEventListener('click', function(){
         trashCan.style.display = "none";
         
         showAndHide(msg);
-        console.log('xong');
         
       }else if(xhr.responseText == "invalid title"){
         document.querySelector('.alertP').style.display = "block"; 

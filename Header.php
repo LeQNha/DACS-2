@@ -11,8 +11,11 @@
         if ($result && $result->num_rows > 0) {
             $row = $result->fetch_assoc();
         
+            echo "<script> console.log('lai header'); </script>";
             // Truy cập vào dữ liệu
+            $email = $row['email'];
             $username = $row['username'];
+            $password = $row['password'];
             $firstname = $row['firstname'];
             $lastname = $row['lastname'];
             $ocupation = $row['ocupation'];
@@ -42,12 +45,11 @@
                 <li>Event</li>
             </ul>
             <ul class="account">
-                
                     
                     <li><i class="fa-solid fa-bell"></i></li>
                     <li style="font-size: 22px; cursor: pointer;" onclick="ShowSubmenu()"> <?php echo $_SESSION['Login']['username']; ?> </li>
                     <li class="user-avatar-container"><img src="/profileimg/<?php echo $avatar; ?>" alt="aa" class="avatar" onclick="ShowSubmenu()"></li>
-
+                    <li><i class="fa-solid fa-angle-down"></i><li></li>
                 
             </ul>
             <div class="sub-menu" id="submenu">
@@ -55,18 +57,14 @@
                     <div class="user-avatar-container">
                         <img src="profileimg/<?php echo $avatar; ?>" alt="avatar">
                     </div>
-                    <?php
-                        echo "<h2>".$username."</h2>"; 
-                        $sql = "SELECT * FROM user WHERE username = '$username'";
-                        $rs = mysqli_query($conn, $sql);
-                        foreach($rs as $r){
-                            echo "<h3>".$r['email']."</h3>";
-                        }
-                    ?>
+                    
+                        <h2><?php echo $username; ?></h2> 
+                        <h3><?php echo $email; ?></h3>
+                
                 </div>
                 <ul>
                     <a href="EditProfile.php"><li>Cài đặt</li></a>
-                    <a href="UserPage.php"><li>Trang cá nhân</li></a>
+                    <a href="PersonalPage.php"><li>Trang cá nhân</li></a>
                     <hr>
                     <a href="Logout.php"><li>Đăng xuất</li></a>
                 </ul>

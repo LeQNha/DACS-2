@@ -10,7 +10,7 @@
 <body>
     <?php include "Header.php"; ?>
     
-    <div class="alert-message">Thay đổi thành công!</div>
+    <div class="alert-message"><p>Thay đổi thành công!</p></div>
 
     <ul class="actions">
         <li class="save" id="save">
@@ -24,14 +24,15 @@
     </ul>
         <div class="edit-navigation">
             <a href="#">Chỉnh sửa hồ sơ</a>
-            <a href="#">Quản lí tài khoản</a>
+            <a href="#edit-account">Quản lí tài khoản</a>
             <!-- <p>Chỉnh sủa tài khoản</p> -->
         </div>
     <div class="container">
         <div class="edit">
+        <form action="#" id="edit-profile-form">
             <div class="edit-profile" id="edit-profile">
                 <h3>Thông tin cơ bản</h3>
-                <form action="#" id="edit-profile-form">
+                
                     <div class="edit-avatar">
                         <div class="user-avatar-img-container">
                             <img src="profileimg/<?php echo $avatar; ?>" alt="" class="user-avatar" id="user-avatar">
@@ -64,24 +65,30 @@
                     </div>
                     <div>
                         <label for="introduction">Giới thiệu</label>
-                        <textarea name="introduction" class="introduction" id="introduction" rows="10"> <?php echo $introduction; ?> </textarea>
+                        <textarea name="introduction" class="introduction" id="introduction"s> <?php echo $introduction; ?></textarea>
                     </div>
-                </form>    
+                   
             </div>
             <div class="edit-account" id="edit-account">
+                <h3>Quản lí tài khoản</h3>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" value="<?php echo $email; ?>">
+                </div>
                 <div>
                     <label for="username">Tài khoản</label>
-                    <input type="text" name="username" id="username">
+                    <input type="text" name="username" id="username" value="<?php echo $username; ?>">
                 </div>
                 <div>
                     <label for="password">Mật khẩu</label>
-                    <input type="text" name="password" id="password">
+                    <input type="password" name="password" id="password" value="<?php echo $password; ?>">
                 </div>
                 <div>
                     <label for="confirmpassword">Xác nhận mật khẩu</label>
-                    <input type="text" name="confirmpassword" id="confirmpassword">
+                    <input type="password" name="confirmpassword" id="confirmpassword" value="<?php echo $password; ?>">
                 </div>
             </div>
+        </form> 
         </div>
     </div>
 

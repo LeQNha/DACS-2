@@ -5,33 +5,40 @@ saveButton.addEventListener('click', function(){
     showAndHide();
     var xhr = new XMLHttpRequest();
     formData = new FormData(document.getElementById('edit-profile-form'));
-    xhr.open('POST','EditProfileProcess.php',true);
-
+    xhr.open('POST','EditProfileProcess.php?action=',true);
+    event.preventDefault();
     xhr.onload = function(){
         if(xhr.status == 200){
             if(xhr.responseText == "success"){
 
-                showAndHide();
+                showAndHide('Thay đổi thành công!');
+                
             }else{
-                alert(xhr.responseText);
+                // alert(xhr.responseText);
+                showAndHide(xhr.responseText);
             }
         }else{
-            alert('Đã xảy ra lỗi! Hãy thử lại sau.');
+            // alert('Đã xảy ra lỗi! Hãy thử lại sau.');
+            showAndHide(xhr.responseText);
         }
     }
     xhr.send(formData);
 });
 
 //Hiện thông báo rồi ẩn
-function showAndHide(){
+function showAndHide(msg){
    var alertMessage = document.querySelector('.alert-message');
+   var message = document.querySelector('.alert-message p');
+   message.textContent = msg;
    alertMessage.style.top = "90vh";
    alertMessage.style.opacity = "1";
 
     setTimeout(function () {
         alertMessage.style.top = "100vh"; // Ẩn thẻ div sau khoảng thời gian
         alertMessage.style.opacity = "0.3";
-        window.location.href = "EditProfile.php";
+        if(msg == 'Thay đổi thành công!'){
+            window.location.href = "EditProfile.php";
+        }
       }, 1000); // Thời gian đếm ngược (đơn vị: mili giây)
 }
 

@@ -19,10 +19,11 @@ header{
     display: flex;
     align-items: center;
     width: 100%;
+    justify-content: space-between;
     /* background: rgba(255, 255, 255, 0); */
 }
 .top-bar .nav-bar{
-    margin-right: 880px;
+    /* margin-right: 880px; */
     margin-left: 55px;
 }
 .top-bar .nav-bar li{
@@ -33,6 +34,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    float: right;
+    margin-right: 20px;
 }
 .top-bar .account li{
     margin-left: 14px;
@@ -113,6 +116,7 @@ header{
     border-top: 1px solid rgb(238, 230, 230);
     border-bottom: 1px solid rgb(238, 230, 230);
     background: rgba(255, 255, 255, 0);
+    outline: none;
 }
 .search-form{
     display: flex;
