@@ -15,7 +15,7 @@
     $introduction = $_POST['introduction'];
     $avatar = "";
 
-    $query = "SELECT * FROM user WHERE username = '$username'";
+    $query = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
         if ($result && $result->num_rows > 0) {
@@ -64,7 +64,7 @@
     }else if(empty($password)){
         echo "Mật khẩu không hợp lệ!";
     }else{
-        $query = "UPDATE user
+        $query = "UPDATE users
               SET email = '$email', username = '$newUsername', password = '$password', firstname = '$firstname', lastname = '$lastname', ocupation = '$ocupation', location = '$location', introduction ='$introduction', avatar = '$avatar' 
               WHERE username = '$username';";
 

@@ -5,7 +5,7 @@
         $username = $_SESSION['Login']['username'];
     }
 
-    $query = "SELECT * FROM user WHERE username = '$username'";
+    $query = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query($conn, $query);
 
         if ($result && $result->num_rows > 0) {

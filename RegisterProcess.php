@@ -14,7 +14,7 @@
     }
 
     // Kiểm tra xem username hoặc email đã tồn tại trong cơ sở dữ liệu
-    $query = "SELECT * FROM user WHERE username = '$username' OR email = '$email'";
+    $query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
     $result = mysqli_query($conn, $query);
     if(empty($email) || empty($username) || empty($password) || empty($confirmpassword)){
         echo "Không được để trống!";

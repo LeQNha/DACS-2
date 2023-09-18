@@ -138,9 +138,18 @@ body{
 .detail-uploader{
     font-size: 20px;
 }
-.uploader .detail-avatar{
-    height: 6vh;
+.uploader .detail-avatar-container{
+    height: 22.212px;
+    width: 22.212px;
     margin: 0px 10px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.uploader .detail-avatar{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .uploader .detail-date-uploaded{
     position: absolute;

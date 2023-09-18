@@ -46,9 +46,11 @@
             </ul>
         <div class="show-details">
                 <div class="uploader">
-                    <img class="detail-avatar" src="webimg/defaultAvatar.png" alt="">
+                    <div class="detail-avatar-container">
+                        <a href="PublicUserPage.php"><img class="detail-avatar" src="webimg/defaultAvatar.png" alt=""></a>
+                    </div>
                     <div>
-                        <a href=""></a><span class="detail-uploader">uploader</span>
+                        <a href="PublicUserPage.php"><span class="detail-uploader">uploader</span></a>
                         <span>Follow</span>
                     </div>
                     <p class="detail-date-uploaded">111-111-111</p>

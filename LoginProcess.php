@@ -14,7 +14,7 @@
         // echo json_encode($response);
         echo "Không được để trống!";
     }else{
-        $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($conn, $query);
 
         if(mysqli_num_rows($result) == 1){

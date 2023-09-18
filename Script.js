@@ -84,7 +84,8 @@ function ShowDetails(pid){
   var detailDescription = document.querySelector('.detail-description');
   var dateUploaded = document.querySelector('.detail-date-uploaded');
   var detailUploader = document.querySelector('.detail-uploader');
-  
+  var detailUploaderAvatar = document.querySelector('.detail-avatar');
+
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'ShowImageDetails.php');
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -97,7 +98,7 @@ function ShowDetails(pid){
     detailDescription.textContent = receivedData.description;
     dateUploaded.textContent = receivedData.dateuploaded
     detailUploader.textContent = receivedData.uploader;
-    
+    detailUploaderAvatar.src = "./profileimg/"+receivedData.uploaderAvatar;
   };
 
   xhr.send("pid=" + encodeURIComponent(pid));
