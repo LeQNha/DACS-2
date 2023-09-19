@@ -76,8 +76,6 @@ document.addEventListener('click', function(event) {
 
 
 //Show img details
-
-function ShowDetails(pid){
   var showDetailsContainer = document.querySelector('.show-details-container');
   var detailTile = document.querySelector('.detail-title');
   var detailImg = document.querySelector('.detail-img');
@@ -85,6 +83,7 @@ function ShowDetails(pid){
   var dateUploaded = document.querySelector('.detail-date-uploaded');
   var detailUploader = document.querySelector('.detail-uploader');
   var detailUploaderAvatar = document.querySelector('.detail-avatar');
+function ShowDetails(pid){
 
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'ShowImageDetails.php');
@@ -114,6 +113,11 @@ function ShowDetails(pid){
     showDetailsContainer.style.display = "none";
     document.body.style.overflow = "auto";
   });
+}
+
+//aslkdfjsladkf
+function ShowPublicUserPage(){
+  window.location.href = "PublicUserPage.php?uploader="+detailUploader.textContent;
 }
 
 

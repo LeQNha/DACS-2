@@ -47,7 +47,7 @@
         <div class="show-details">
                 <div class="uploader">
                     <div class="detail-avatar-container">
-                        <a href="PublicUserPage.php"><img class="detail-avatar" src="webimg/defaultAvatar.png" alt=""></a>
+                        <a href="#" onclick="ShowPublicUserPage()"><img class="detail-avatar" src="webimg/defaultAvatar.png" alt=""></a>
                     </div>
                     <div>
                         <a href="PublicUserPage.php"><span class="detail-uploader">uploader</span></a>

@@ -100,6 +100,14 @@ submitBtn.addEventListener('click', function(){
         trashCan.style.display = "none";
         
         showAndHide(msg);
+
+        isUpLoaded = false;
+        img.src = "";
+        input.value = "";
+        trashCan.style.display = "none";
+        imageShow.style.background = '#fafbff';
+        document.querySelector('.image-show p').style.display = 'block';
+        document.querySelector('.image-show i').style.display = 'block';
         
       }else if(xhr.responseText == "invalid title"){
         document.querySelector('.alertP').style.display = "block"; 
